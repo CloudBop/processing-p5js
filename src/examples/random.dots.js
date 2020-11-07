@@ -10,6 +10,7 @@ const p5ctx =  new p5(
       //
       p5.createCanvas(window.innerWidth, window.innerHeight)
       p5.background(0,0,0)
+      
       //       
       // Puts the sketch into Hue, Saturation and Brightness mode
       p5.colorMode('HSB');
@@ -19,7 +20,6 @@ const p5ctx =  new p5(
       for(let i=0;i<1000;i++){
         //
         //const rand = Math.floor(getRandomArbitrary(0,4))
-        
         p5.stroke('rgba(255,204,0,0.5)');
         p5.strokeWeight(3)
         p5.point(Math.random() * window.innerWidth,Math.random()* window.innerHeight);
