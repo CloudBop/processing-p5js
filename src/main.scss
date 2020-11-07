@@ -1,0 +1,47 @@
+// $primary: teal;
+// $danger: purple;
+// @import "~bootstrap/scss/bootstrap";
+
+*, *:before, *:after { box-sizing: border-box; }
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: wheat;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(185, 150, 83);
+  overflow: auto;
+  text-align: center;
+}
+
+.iteration-list {
+  // background-color: whitesmoke;
+  height: 15vh;
+  resize: both;
+  overflow: auto;
+
+  h2 {
+    padding: 8px;
+  }
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height:100vh;
+  width:100vw;
+  // background-color: yellow;
+}
+
+canvas{
+  position: absolute;
+  // top: 0;
+  // left: 0;
+  // margin: 0;
+  // padding: 0;
+}
