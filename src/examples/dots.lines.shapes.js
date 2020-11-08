@@ -32,7 +32,6 @@ const p5 =  new p5ctx(
         p5.stroke(colors[rand])
         p5.point(Math.random() * window.innerWidth,Math.random()* window.innerHeight);
       }
-  
     }
     // 
     p5.draw = ()=>{

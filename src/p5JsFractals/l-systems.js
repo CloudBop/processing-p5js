@@ -1,7 +1,8 @@
 import baseCmds from './base.cmds.js'
 const tree = {
-  iterations: 6,
+  iterations: 3,
   params: {
+    // 
     angle: 137.5,
     length: 8,
   },

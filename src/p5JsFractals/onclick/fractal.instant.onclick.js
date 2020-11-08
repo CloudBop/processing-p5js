@@ -2,7 +2,7 @@
 import p5 from 'p5';
 import { Point, DrawingState, renderAGeneration } from '../helpers.js'
 import {tree as currentLsystem} from '../l-systems.js'
-import logger from '../logger.js'
+import userInterface from '../userInterface.js'
 
 const CANVAS_BOUNDS = new Point(window.innerWidth, window.innerHeight)
 
@@ -17,7 +17,9 @@ const p5ctx =  new p5(
       p5.createCanvas(CANVAS_BOUNDS.x,  CANVAS_BOUNDS.y)
       p5.background("#563423")
       p5.stroke('#fff')
+      // default radians
       p5.angleMode(p5.DEGREES);
+      // The noLoop() function causes draw() to only execute once. Without calling noLoop(), the code inside draw() is run continually.
       p5.noLoop();
     }
     let count =0, isCount=false;
@@ -39,9 +41,11 @@ const p5ctx =  new p5(
         p5.strokeWeight(drawingState.state.strokeWeight || 1);
         p5.line(x, y, newX, newY);
         p5.pop(); // restore drawing state
-        // update drawing state
-      },count*10)
-      //
+        //
+        // - throw function on event loop and call after count * 10 =
+        //
+      },count* userInterface.number.value )
+      // update drawing state
       drawingState.state.position.x = newX;
       drawingState.state.position.y = newY;
     };
@@ -53,7 +57,7 @@ const p5ctx =  new p5(
     //
     // if(count >0) return;
     count = 0;
-    isCount = logger.checkbox.checked ? true : false;
+    isCount = userInterface.checkbox.checked ? true : false;
     //
     const origin = new Point(p5ctx.mouseX, p5ctx.mouseY);
     // for ease of reference
@@ -74,11 +78,11 @@ const p5ctx =  new p5(
 // log next if exist on current tree
   // by default list first iteration
   let systemState = currentLsystem.axiom
-  logger.log(systemState);
+  userInterface.log(systemState);
   // log next if exist on current tree
   for (let i = 0; i < currentLsystem.iterations; i++) {
     systemState = renderAGeneration(currentLsystem, systemState);
-    logger.log(systemState);
+    userInterface.log(systemState);
   }
 
 export default p5ctx;

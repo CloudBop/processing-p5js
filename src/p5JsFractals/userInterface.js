@@ -11,9 +11,15 @@ checkbox.name = "incrementDraw";
 checkbox.value = "incrementDraw";
 checkbox.id = "incrementDraw";
 
+const number = document.createElement('input');
+number.type = "number";
+number.name = "incrementDrawValue";
+number.value = "incrementDrawValue";
+number.id = "incrementDrawValue";
+
 const label = document.createElement('label')
-label.htmlFor = "id";
-label.appendChild(document.createTextNode('Wait for spacebar to increment drawer'));
+label.htmlFor = "incrementDraw";
+label.appendChild(document.createTextNode('ms between each draw'));
 
 // const trigger = document.createElement('input');
 // trigger.type = "button";
@@ -25,8 +31,9 @@ const logIterationContainer = document.createElement('div')
 logIterationContainer.className="iteration-list"
 logIterationContainer.append(logIterationTitle);
 logIterationContainer.append(checkbox);
+logIterationContainer.append(number);
+
 logIterationContainer.append(label);
-// logIterationContainer.append(trigger);
 
 logIterationContainer.append(logIterationList);
 
@@ -45,6 +52,7 @@ const logger = {
     logIterationList.append(listElement);  
   },
   checkbox,
+  number,
   
   counter: 0
 }
