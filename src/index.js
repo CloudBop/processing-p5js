@@ -13,6 +13,11 @@ import "./main.scss";
 //
 // import "./example.boilerplate.p5.js"
 // import "./examples/dots.lines.shapes.js"
+// import "./examples/mandlebrot.js"
+// import "./examples/penrose-tiles.js"
+// import "./examples/fractal-tree.js"
 // import "./moire-patterns/moire.simple.js"
-// import "./p5JsFractals/onclick/fractal.instant.onclick.js"
-import "./p5JsFractals/generators/fractal.animated.onclick.js"
+import "./p5JsFractals/onclick/fractal.instant.onclick.js"
+// import "./p5JsFractals/generators/fractal.animated.onclick.js"
+// import "./p5JsFractals/p5.org.example.lsystem.js"
+// import "./examples/bouncing-ball/index.js"

@@ -1,4 +1,5 @@
 import baseCmds from './base.cmds.js'
+
 const tree = {
   iterations: 3,
   params: {
@@ -38,5 +39,18 @@ const angular = {
   },
   commands: baseCmds
 }
+
+//
+//
+const testing = {
+  axiom: 'A', // "axiom" or start of the string
+  iterations:  5, // how many iterations to pre-compute
+  rules: {
+    A: '-BF+AFA+FB-',
+    B: '+AF-BFB-FA+'
+  } // array for rules
+  
+}
+
 
 export { tree, angular } ;
