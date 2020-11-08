@@ -15,3 +15,4 @@ import "./main.scss";
 // import "./examples/dots.lines.shapes.js"
 // import "./moire-patterns/moire.simple.js"
 import "./p5JsFractals/onclick/fractal.instant.onclick.js"
+// import "./p5JsFractals/generators/fractal.animated.onclick.js"

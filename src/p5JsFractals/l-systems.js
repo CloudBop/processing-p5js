@@ -1,30 +1,36 @@
 import baseCmds from './base.cmds.js'
 const tree = {
-  iterations: 3,
+  iterations: 6,
   params: {
-    angle: 25,
-    length: 2,
+    angle: 137.5,
+    length: 8,
   },
   axiom: 'X',
   rules: {
-    X: 'F[-X][X]F[-X]+FX',
+    X: 'F[-X][X]F[-X]+FX+FX',
     F: 'FF',
   },
   commands: baseCmds
 }
 
+//
+// axiom_pattern
+//     _
+//   _| |  _
+//      |_|
+
+// F Move forward by line length drawing a line
+// + Turn left by turning angle
+// - Turn left by turning angle
 const angular = {
-  iterations: 2,
+  // careful on worse algos
+  iterations: 3,
   params: {
     angle: 90,
-    length: 11,
+    length: 20,
   },
+  //
   axiom: 'F+F+F+F',
-  axiom_pattern: `
-    _
-  _| |  _
-     |_|
-  `,
   rules: {
     X: 'F[-X][X]F[-X]+FX',
     F: 'F+F-F-FF+F+F-F',

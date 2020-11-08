@@ -20,7 +20,7 @@
 //  )	         Increment turning angle by turning angle increment
 
 const baseCommands = {
-  // assign inside p5 scope
+  // assign @ p5 scope
   'F': null,
   //
   '-'(drawingState, params) {

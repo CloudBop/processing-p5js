@@ -1,3 +1,4 @@
+
 const CANVAS = {
   x: 1000, 
   y: 1000
@@ -48,22 +49,23 @@ function applyRule(rules, char) {
 function renderAGeneration (l_system, previousGeneration, drawingState, draw=false) {
   //
   let nextGeneration = '';
-  //
+  // loop over axiom
   for (const character of previousGeneration) {
-    //
+    // 
     const nextCharacters = applyRule(l_system.rules, character);
     // concatenate string
     nextGeneration += nextCharacters;
     //
-    //
-    //
     if (draw) {
-      
+      // loop over next iteration
       for (const character of nextCharacters) {
-        
+        // if this exists and is set || would throw error if falsey
         if (l_system.commands[character]) {
-          // 
-         l_system.commands[character](drawingState, l_system.params);
+          // call function from l_system ruleset
+          // bracket[notation]() ==== barcket.notation()
+     
+          l_system.commands[character] (drawingState, l_system.params);     
+          
        }
       }
     }
@@ -71,8 +73,54 @@ function renderAGeneration (l_system, previousGeneration, drawingState, draw=fal
   //
   return nextGeneration;
 }
+
+
+// - Generators for animation.
+function *fragmentGenerator(system, string) {
+  for (const char of string) {
+    yield applyRule(system.rules, char);
+  }
+}
+// - animation
+function drawSystem(system, fragmentIterator, drawingState) {
+  //
+  // let frameRate=0;
+  const drawFrame = () => {
+    //
+    const iter = fragmentIterator.next();
+    // frameRate++
+    //
+    if (iter.done) {
+      return;
+    }
+    const fragment = iter.value;
+    //
+    for (const character of fragment) {
+      //
+      // console.log('frameRate', frameRate)
+      const drawingFunction = system.commands[character];
+
+      if (drawingFunction) {
+        // console.log(character)
+        drawingFunction(drawingState, system.params);
+      }
+    }
+
+    // call itself 
+    requestAnimationFrame(drawFrame);
+  };
+
+  // initialise rendering
+  requestAnimationFrame(drawFrame);
+}
+
+
+
+
+
+
 //
-export { Point, DrawingState, CANVAS, renderAGeneration }
+export { Point, DrawingState, CANVAS, renderAGeneration, drawSystem, fragmentGenerator }
 //
 //
 // function drawForward(drawingState, params, ctx) {
