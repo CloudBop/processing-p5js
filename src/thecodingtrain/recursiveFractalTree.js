@@ -16,12 +16,13 @@ const p5 =  new p5ctx(
       // frameRate || deltaTime
       const len = 100;
       p5.stroke(255);
+      p5.translate(200, p5.height);
       branch(len);
     }
 
 
     function branch(len){
-      p5.line(200, p5.height, 200, p5.height -len);
+      p5.line(0, 0, 0, -len);
     }
   }
 )
