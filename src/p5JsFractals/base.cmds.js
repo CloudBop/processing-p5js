@@ -1,5 +1,4 @@
 // rules
-
 // Character        Meaning
 //  F	         Move forward by line length drawing a line
 //  f	         Move forward by line length without drawing a line

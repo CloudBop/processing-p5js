@@ -1,11 +1,10 @@
 // go to /node_modules and get p5.js
 import p5 from 'p5';
 import { Point, DrawingState, renderAGeneration } from '../helpers.js'
-import {tree as currentLsystem} from '../l-systems.js'
+import { sarahs_fractal as currentLsystem } from '../l-systems.js'
 import userInterface from '../userInterface.js'
 
 const CANVAS_BOUNDS = new Point(window.innerWidth, window.innerHeight)
-
 // create a new p5 instance. docs - https://p5js.org/reference/
 const p5ctx =  new p5(
   // invoke p5 with function 
