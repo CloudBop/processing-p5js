@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "test": "jest --watch",
         "comment": "& runs concurrent. && runs in order",
         "checkFormat": "prettier --check \"**/*.{js,json,css,scss}\"",
         "format": "prettier --format \"**/*.{js,json,css,scss}\"",
@@ -60,5 +61,10 @@
         "webpack": "4.44.1",
         "webpack-cli": "^4.2.0",
         "webpack-dev-server": "^3.11.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.12.1",
+        "babel-jest": "^26.6.3",
+        "jest": "^26.6.3"
     }
 }

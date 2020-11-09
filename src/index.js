@@ -21,3 +21,4 @@ import "./p5JsFractals/onclick/fractal.instant.onclick.js"
 // import "./p5JsFractals/generators/fractal.animated.onclick.js"
 // import "./p5JsFractals/p5.org.example.lsystem.js"
 // import "./examples/bouncing-ball/index.js"
+// import "./examples/color-sketch.js";
