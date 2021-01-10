@@ -1,7 +1,7 @@
 // go to /node_modules and get p5.js
 import p5 from 'p5';
 import { Point, DrawingState, renderAGeneration } from '../helpers.js'
-import { sarahs_fractal as currentLsystem } from '../l-systems.js'
+import { angular as currentLsystem } from '../l-systems.js'
 import userInterface from '../userInterface.js'
 
 const CANVAS_BOUNDS = new Point(window.innerWidth, window.innerHeight)
